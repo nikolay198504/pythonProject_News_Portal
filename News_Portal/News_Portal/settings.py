@@ -205,5 +205,4 @@ AUTHENTICATION_BACKENDS = [
 ]
 
 
-
 ACCOUNT_FORMS = {'signup': 'sign.models.CommonSignupForm'}
