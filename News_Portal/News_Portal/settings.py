@@ -204,6 +204,5 @@ AUTHENTICATION_BACKENDS = [
     'allauth.account.auth_backends.AuthenticationBackend',
 ]
 
-#ACCOUNT_FORMS = {'signup': 'sign.models.BasicSignupForm'}
 
 ACCOUNT_FORMS = {'signup': 'sign.models.CommonSignupForm'}
