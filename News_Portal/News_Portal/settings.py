@@ -50,7 +50,11 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.yandex',
+    #'allauth.socialaccount.providers.google',
+    'allauth.socialaccount.providers.yahoo',
+    'allauth.socialaccount.providers.zoho',
     'allauth.socialaccount.providers.google',
+    'allauth.socialaccount.providers.vk',
 
 ]
 
@@ -182,7 +186,37 @@ SOCIALACCOUNT_PROVIDERS = {
             'key': ''
         }
     },
+    'yahoo': {
+        # For each OAuth based provider, either add a ``SocialApp``
+        # (``socialaccount`` app) containing the required client
+        # credentials, or list them here:
+        'APP': {
+            'client_id': '1057630083128-vij7pkp342h93n1jsilbr2gavup6vrdj.apps.googleusercontent.com',
+            'secret': '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',
+            'key': ''
+        }
+    },
+    'zoho': {
+        # For each OAuth based provider, either add a ``SocialApp``
+        # (``socialaccount`` app) containing the required client
+        # credentials, or list them here:
+        'APP': {
+            'client_id': '1057630083128-vij7pkp342h93n1jsilbr2gavup6vrdj.apps.googleusercontent.com',
+            'secret': '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',
+            'key': ''
+        }
+    },
     'google': {
+        # For each OAuth based provider, either add a ``SocialApp``
+        # (``socialaccount`` app) containing the required client
+        # credentials, or list them here:
+        'APP': {
+            'client_id': '1057630083128-vij7pkp342h93n1jsilbr2gavup6vrdj.apps.googleusercontent.com',
+            'secret': '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',
+            'key': ''
+        }
+    },
+    'vk': {
         # For each OAuth based provider, either add a ``SocialApp``
         # (``socialaccount`` app) containing the required client
         # credentials, or list them here:
@@ -203,6 +237,7 @@ AUTHENTICATION_BACKENDS = [
     # `allauth` specific authentication methods, such as login by e-mail
     'allauth.account.auth_backends.AuthenticationBackend',
 ]
+
 
 
 ACCOUNT_FORMS = {'signup': 'sign.models.CommonSignupForm'}
