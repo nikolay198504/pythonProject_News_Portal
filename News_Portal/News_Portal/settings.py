@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    "News",
+    'News',
+    'news.apps.NewsConfig',
     'django_filters',
     'django.contrib.sites',
     'django.contrib.flatpages',
@@ -50,7 +51,6 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.yandex',
-    #'allauth.socialaccount.providers.google',
     'allauth.socialaccount.providers.yahoo',
     'allauth.socialaccount.providers.zoho',
     'allauth.socialaccount.providers.google',
@@ -186,26 +186,7 @@ SOCIALACCOUNT_PROVIDERS = {
             'key': ''
         }
     },
-    'yahoo': {
-        # For each OAuth based provider, either add a ``SocialApp``
-        # (``socialaccount`` app) containing the required client
-        # credentials, or list them here:
-        'APP': {
-            'client_id': '1057630083128-vij7pkp342h93n1jsilbr2gavup6vrdj.apps.googleusercontent.com',
-            'secret': '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',
-            'key': ''
-        }
-    },
-    'zoho': {
-        # For each OAuth based provider, either add a ``SocialApp``
-        # (``socialaccount`` app) containing the required client
-        # credentials, or list them here:
-        'APP': {
-            'client_id': '1057630083128-vij7pkp342h93n1jsilbr2gavup6vrdj.apps.googleusercontent.com',
-            'secret': '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',
-            'key': ''
-        }
-    },
+
     'google': {
         # For each OAuth based provider, either add a ``SocialApp``
         # (``socialaccount`` app) containing the required client
@@ -216,16 +197,6 @@ SOCIALACCOUNT_PROVIDERS = {
             'key': ''
         }
     },
-    'vk': {
-        # For each OAuth based provider, either add a ``SocialApp``
-        # (``socialaccount`` app) containing the required client
-        # credentials, or list them here:
-        'APP': {
-            'client_id': '1057630083128-vij7pkp342h93n1jsilbr2gavup6vrdj.apps.googleusercontent.com',
-            'secret': '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',
-            'key': ''
-        }
-    }
 
 }
 
@@ -241,3 +212,15 @@ AUTHENTICATION_BACKENDS = [
 
 
 ACCOUNT_FORMS = {'signup': 'sign.models.CommonSignupForm'}
+
+SITE_URL = 'http://127.0.0.1:8000'
+
+# адрес сервера Яндекс-почты для всех один и тот же D.9
+EMAIL_HOST = 'smtp.yandex.ru'
+EMAIL_PORT = 465
+# ваше имя пользователя, например, если ваша почта user@yandex.ru, то сюда надо писать user,
+EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
+# Яндекс использует ssl, включать его здесь обязательно
+EMAIL_USE_SSL = True
+DEFAULT_FROM_EMAIL = os.getenv('DEFAULT_FROM_EMAIL')
