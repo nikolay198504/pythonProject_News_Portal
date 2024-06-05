@@ -40,8 +40,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    'News',
-    'news.apps.NewsConfig',
+    'News.apps.NewsConfig',
     'django_filters',
     'django.contrib.sites',
     'django.contrib.flatpages',
@@ -59,7 +58,9 @@ INSTALLED_APPS = [
 ]
 
 
+#DEFAULT_FROM_EMAIL = 'bogatyirskiy@yandex.ru'
 
+# изменяем настройки так, как это было в документации https://docs.allauth.org/en/latest/installation/quickstart.html#post-installation
 
 
 MIDDLEWARE = [
@@ -111,6 +112,7 @@ DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
         "NAME": BASE_DIR / "db.sqlite3",
+
     }
 }
 
